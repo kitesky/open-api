@@ -64,6 +64,36 @@
 
     hash_hmac('sha256', plainText, clientSecret))
 
+### 接口请求
+
+1. 输入示例
+```
+curl --location --request POST 'https://www.idcd.com/api/test' \
+--header 'ClientID: df77f2de-2924-4499-adda-1c4cc243625a' \
+--header 'Nonce: v0j38hHHUEqFwoh0Gc8Rbfi737xtIpLL' \
+--header 'Timestamp: 1716085926' \
+--header 'Signature: 5b1230f42bad2ffd5ad09890a8ebb47c02d74668be0cf7bb54a0f6a14996117b' \
+--header 'SignatureMethod: HmacSHA256' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "input_text": "test content"
+}'
+```
+
+2. 输出示例
+
+```json
+{
+    "status": true,
+    "message": "Success",
+    "request_id": "d5d21011-5e37-435b-abca-296ce9d51cc9",
+    "data": {
+        "output_text": "test content"
+    }
+}
+```
+
+
 ### 响应结果
 
 ##### 正确返回结果
