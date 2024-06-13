@@ -1,5 +1,5 @@
 # 关于 Open API
-实用在线工具箱(https://www.idcd.com)，提供大量在线工具服务，自网站上线以来，稳定运行服务5年时间。该文档为对外提供的API开发文档，在这里您可以找到多种资源API并与之集成，我们提供基于 HTTP协议 的 API，访问 API 将使用 Header Sign 方式 进行身份验证，您必须先注册帐号并创建应用程序客户端，生成 API 密钥信息。
+实用在线工具箱( https://www.idcd.com )，提供大量在线工具服务，自网站上线以来，稳定运行服务5年时间。该文档为对外提供的API开发文档，在这里您可以找到多种资源API并与之集成，我们提供基于 HTTP协议 的 API，访问 API 将使用 Header Sign 方式 进行身份验证，您必须先注册帐号并创建应用程序客户端，生成 API 密钥信息。
 
 ### API 密钥
 使用以下步骤填写开发者资料：
@@ -66,6 +66,36 @@
 计算派生签名密钥，伪代码如下：
 
     hash_hmac('sha256', plainText, clientSecret))
+
+### 接口请求
+
+1. 输入示例
+```
+curl --location --request POST 'https://www.idcd.com/api/test' \
+--header 'ClientID: df77f2de-2924-4499-adda-1c4cc243625a' \
+--header 'Nonce: v0j38hHHUEqFwoh0Gc8Rbfi737xtIpLL' \
+--header 'Timestamp: 1716085926' \
+--header 'Signature: 5b1230f42bad2ffd5ad09890a8ebb47c02d74668be0cf7bb54a0f6a14996117b' \
+--header 'SignatureMethod: HmacSHA256' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "input_text": "test content"
+}'
+```
+
+2. 输出示例
+
+```json
+{
+    "status": true,
+    "message": "Success",
+    "request_id": "d5d21011-5e37-435b-abca-296ce9d51cc9",
+    "data": {
+        "output_text": "test content"
+    }
+}
+```
+
 
 ### 响应结果
 
