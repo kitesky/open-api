@@ -23,6 +23,9 @@
 - 域名ssl证书信息查询API
 - 网址安全检测API
 - 国家法定节日放假安排查询API
+- 历史上的今天查询AP
+- 全国高校查询API(不含军校)
+- 外汇牌价查询
 - 更多 API 待更新...
 
 更多文档资料请移步 https://www.idcd.com/docs/open-api
