@@ -26,6 +26,7 @@
 - 历史上的今天查询API
 - 全国高校查询API(不含军校)
 - 外汇牌价查询
+- 图片宫格切图API接口
 - 更多 API 待更新...
 
 更多文档资料请移步 https://www.idcd.com/docs/open-api
